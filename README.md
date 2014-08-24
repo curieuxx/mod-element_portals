@@ -30,7 +30,7 @@ Current portals
 Under development
 -------------------------
 
- * Sand portal used as fast escape portals - just step on it and your on the other end
+ * Sand portal used as fast escapes - just step on it and your on the other end
  * Tee portal as home portal, the portal grows a tree from which you can take branches and use later 
  * Dirt portals for short distance public use
 
