@@ -24,15 +24,15 @@ A wiki with pictures and details is here :
 Current portals
 ---------------
 
- * Water portal uses water as connection and power, they are private and you can select your end point
- * Lava portal act like water portals but use lava as connection and power
+ * _Water portal_ uses water as connection and power, they are private and you can select your end point
+ * _Lava portal_ act like water portals but use lava as connection and power
 
 Under development
 -------------------------
 
- * Sand portal used as fast escapes - just step on it and your on the other end
- * Tee portal as home portal, the portal grows a tree from which you can take branches and use later 
- * Dirt portals for short distance public use
+ * _Sand portal_ used as fast escapes - just step on it and your on the other end
+ * _Tree portal_ as home portal, the portal grows a tree from which you can take branches and use later to get back home
+ * _Dirt portals_ for short distance public use
 
 
 Licence
