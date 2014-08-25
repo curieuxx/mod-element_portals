@@ -1,7 +1,7 @@
 Element Portals
 ===============
 
-A minetest mod that adds teleport capabilities in the game trough the natural elements found in the world. Portals can have a cutom name and you can select your destination. The mode is separated in submodules so you can chose to use a subset of these portals.
+A [Minetest](http://minetest.net/) mod that adds teleport capabilities in the game trough the natural elements found in the world. Portals can have a cutom name and you can select your destination. The mod is separated in submodules so you can chose to use a subset of these portals.
 
 Dependencies
 ------------
@@ -13,26 +13,26 @@ Just mods found in defaults:
 
 Install
 -------
-Download the [zip](https://github.com/curieuxx/mod-element_portals/archive/master.zip) or clone the url (so far no release)  and unpack into your mintest `mods` as described [here](http://wiki.minetest.com/wiki/Installing_Mods). Don't forget to enable it from world configuration.
+Download the [zip](https://github.com/curieuxx/mod-element_portals/archive/master.zip) or clone the url (so far no release)  and unpack into your mintest `mods` as described here: [Installing Mods](http://wiki.minetest.com/wiki/Installing_Mods). Don't forget to enable it from world configuration.
 
 Usage / Wiki
 ------------
 
-A wiki with pictures and details is here :  
+A wiki with pictures and details is here :  [https://github.com/curieuxx/mod-element_portals/wiki](https://github.com/curieuxx/mod-element_portals/wiki)
 
 
 Current portals
 ---------------
 
- * _Water portal_ uses water as connection and power, they are private and you can select your end point
- * _Lava portal_ act like water portals but use lava as connection and power
+ * __Water portal__ uses water as connection and power, they are private and you can select your end point
+ * __Lava portal__ act like water portals but use lava as connection and power
 
 Under development
 -------------------------
 
- * _Sand portal_ used as fast escapes - just step on it and your on the other end
- * _Tree portal_ as home portal, the portal grows a tree from which you can take branches and use later to get back home
- * _Dirt portals_ for short distance public use
+ * __Sand portal__ used as fast escapes - just step on it and your on the other end
+ * __Tree portal__ as home portal, the portal grows a tree from which you can take branches and use later to get back home
+ * __Dirt portals__ for short distance public use
 
 
 Licence
