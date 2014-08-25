@@ -13,7 +13,7 @@ Just mods found in defaults:
 
 Install
 -------
-Download the [zip](https://github.com/curieuxx/mod-element_portals/archive/master.zip) or clone the url (so far no release)  and unpack into your mintest `mods` as described here: [Installing Mods](http://wiki.minetest.com/wiki/Installing_Mods). Don't forget to enable it from world configuration.
+Download the [zip](https://github.com/curieuxx/mod-element_portals/archive/master.zip) or clone the url (so far no release)  and unpack into your mintest `mods` as described here: [Installing Mods](http://wiki.minetest.com/wiki/Installing_Mods) or here : [Installing_Mods](http://dev.minetest.net/Installing_Mods). Don't forget to enable it from world configuration.
 
 Usage / Wiki
 ------------
