@@ -1,7 +1,7 @@
 Element Portals
 ===============
 
-A [Minetest](http://minetest.net/) mod that adds teleport capabilities in the game trough the natural elements found in the world. Portals can have a cutom name and you can select your destination. The mod is separated in submodules so you can chose to use a subset of these portals.
+A [Minetest](http://minetest.net/) mod that adds teleport capabilities in the game trough the natural elements found in the world. Portals can have a custom name and you can select your destination. The mod is separated in submodules so you can chose to use a subset of these portals.
 
 Dependencies
 ------------
