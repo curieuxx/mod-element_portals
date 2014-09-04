@@ -10,3 +10,17 @@ minetest.register_chatcommand("sanitize_portals", {
 		return true, "Done."
 	end,
 })
+
+
+minetest.register_chatcommand("teleport_free", {
+	params = "",
+	description = "Opens Teleport dialog - allows user to teleport for free",
+	func = function(name, param)
+		local player = minetest.get_player_by_name(name)
+		if not player then
+			return false, "Player not found"
+		end
+		element_portals:show_item_portal_form(player)
+		return true, "Done."
+	end,
+})

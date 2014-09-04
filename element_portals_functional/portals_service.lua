@@ -247,6 +247,29 @@ function element_portals:fix_portal_data(k, v)
 	return element_portals.VOID_ACTION
 end
 
+local check_portal = function(portal_key, portal_params)
+	local node_data = element_portals:get_portal_node_data(portal_key, portal_params)
+	return element_portals:is_registered_out_portal(node_data.node.name) 
+end
+
+function element_portals:teleport_to(selected_portal_name, player, travel_free, meta)
+	local portals = element_portals:read_player_portals_table(player)
+	for k,v in pairs(portals) do
+		if v.portal_name ==  selected_portal_name then
+			local valid_end_point_portal = check_portal(k, v)
+			if valid_end_point_portal then
+				local teleport_posible = travel_free or (meta and element_portals:consume_fuel(meta, player))
+				if teleport_posible then
+					v.pos.y  = v.pos.y + 1
+					player:setpos(v.pos)
+				end
+			else
+				minetest.chat_send_player(player:get_player_name(), "The selected portal is disabled and it cannot be used")
+			end
+			return
+		end
+	end
+end
 -- run a sanitize when player joins when the player joins
 minetest.register_on_joinplayer(function(player) 
   if player then
