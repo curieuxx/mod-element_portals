@@ -255,11 +255,11 @@ end
 
 local build_node_template = function(params, name)
 	local node_template
-	if params.portal_type == element_portals.IN_OUT_PORTAL then 
+	if params.portal_type == element_portals.IN_OUT_PORTAL or params.portal_type == element_portals.IN_PORTAL then 
+			print ("generating input output portal for name : ".. name)
 		 node_template = element_portals:build_private_node_io_template(params, name)
-	elseif params.postal_type == element_portals.IN_PORTAL then
-		 node_template = element_portals:build_private_node_i_template(params, name)
-	else
+	else	
+		print ("generating output portal for name : ".. name)
 		 node_template = element_portals:build_private_node_o_template(params, name)
 	end
 	return node_template

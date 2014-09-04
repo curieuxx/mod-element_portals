@@ -44,7 +44,7 @@ local append_current_portal_form_fields = function(result, key ,data)
 end
 
 local append_active_input_portal_fields = function(result, portals, key, data, selected_portal_name)
-	local portal_filter_group = element_portals:get_portal_filter_group(data.portal_node)
+	local portal_filter_group = element_portals:get_portal_filter_group(data.node_name)
 	local list_result = build_portal_list(portals, key, selected_portal_name, portal_filter_group);
 	result = result.."dropdown[0,2;5;selected_portal_name;"..list_result.list..";"..list_result.selected_index.."]"
 	result = result.."button_exit[0,3;5,1;teleport;Teleport]" 
