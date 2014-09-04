@@ -103,7 +103,7 @@ function element_portals:generate_portal_name_with(prefix, count, portals, exclu
 	return generated_name
 end
 
-function element_portals:create_portal(pos, player) 
+function element_portals:create_portal(pos, player, node_name) 
 	local name = player:get_player_name()
 	local coords = minetest.pos_to_string(pos)
 	minetest.chat_send_player(name, "Attempting to create portal at "..coords..".")
@@ -114,7 +114,7 @@ function element_portals:create_portal(pos, player)
 	local portals = element_portals:read_player_portals_table(player)
 	local portal_name = element_portals:generate_portal_name(portals)
 	local key = element_portals:construct_portal_id_key(pos, player)
-	portals[key] = {pos = pos, portal_name = portal_name}
+	portals[key] = {pos = pos, portal_name = portal_name, node_name = node_name}
 	element_portals:write_player_portals_table(player, portals)
 	minetest.chat_send_player(name, "Portal added at "..coords..".")
 	return portal_name

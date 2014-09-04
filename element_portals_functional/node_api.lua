@@ -18,11 +18,10 @@ function element_portals:build_private_node_o_template (params, portal_node_name
 	after_place_node = function(pos, placer)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("owner", placer:get_player_name() or "")
-		local portal_name = element_portals:create_portal(pos, placer, params.portal_group)
+		print (portal_node_name)
+		local portal_name = element_portals:create_portal(pos, placer, portal_node_name)
 		meta:set_string("infotext", "Portal ".. portal_name .." (owned by "..
 				meta:get_string("owner")..")")
-		meta:set_string("portal_node_name", portal_node_name)
-		element_portals:set_portal_node_meta(meta, params, portal_node_name)
 	end,
 	on_destruct = function(pos)
 		local meta = minetest.get_meta(pos)
@@ -45,7 +44,7 @@ function element_portals:build_private_node_io_template (params, portal_node_nam
 	after_place_node = function(pos, placer)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("owner", placer:get_player_name() or "")
-		local portal_name = element_portals:create_portal(pos, placer, params.portal_group)
+		local portal_name = element_portals:create_portal(pos, placer, portal_node_name)
 		meta:set_string("infotext", "Portal ".. portal_name .." (owned by "..
 				meta:get_string("owner")..")")
 	end,
@@ -55,7 +54,7 @@ function element_portals:build_private_node_io_template (params, portal_node_nam
 		meta:set_string("owner", "")
 		local inv = meta:get_inventory()
 		inv:set_size("fuel", 1)
-		element_portals:set_portal_node_meta(meta, params, portal_node_name)
+		element_portals:set_portal_node_meta(meta, params)
 	end,
 	on_destruct = function(pos)
 		local meta = minetest.get_meta(pos)
