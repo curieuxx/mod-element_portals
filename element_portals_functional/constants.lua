@@ -14,4 +14,7 @@ element_portals.IN_OUT_PORTAL = 3
 element_portals.VOID_ACTION = -2
 element_portals.REMOVE_PORTAL_ACTION = 4
 
+-- formspec
+
+element_portals.PORTAL_FORM_NAME = "element_portals:portal_form"
 

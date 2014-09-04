@@ -5,11 +5,6 @@ end
 element_portals.registered_portals = {}
 element_portals.disabled_portal_keys = {}
 
-
-if not element_portals then
-	element_portals = {}
-end
-
 function element_portals:read_player_portals_table(player)
 	local player_name = player:get_player_name();
 	local portals = {}

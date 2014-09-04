@@ -8,6 +8,10 @@ function element_portals:tablelength(table)
   return count
 end
 
+function element_portals:string_starts(str,start)
+   return string.sub(str,1,string.len(start))==start
+end
+
 function element_portals:contains_any(str, values)
 	if values then
 		for i, value in pairs(values) do
