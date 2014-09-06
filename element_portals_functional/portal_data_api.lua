@@ -91,7 +91,7 @@ function element_portals:write_players_portal_files(no_schedule)
 	for player_name, cache_data in pairs(portal_cache) do
 		if cache_data.changed then
 			minetest.log("action", "Portals for player ".. player_name .." changed, writing to file")
-			element_portals:write_to_file(cache_data.player, cache_data.portals) 		
+			write_to_file(cache_data.player, cache_data.portals) 		
 			cache_data.changed=false
 		end
 	end
