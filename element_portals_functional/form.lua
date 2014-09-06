@@ -45,7 +45,7 @@ function element_portals:show_portal_form(pos, clicker, message)
 		if not acitve_from_inv then
 			local acitve_from_surr = element_portals:is_portal_powered_from_surroundings(meta, pos)
 			if acitve_from_surr then
-				formspec = element_portals:create_fuel_surrounds_portal_formspec(pos, clicker, selected_portal_name , message)
+				formspec = element_portals:create_travel_free_portal_formspec(pos, clicker, selected_portal_name , message)
 			end
 		end
 		

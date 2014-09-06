@@ -4,10 +4,15 @@ end
 
 
 function  element_portals:has_private_portal_privilege(meta, player)
-	if player:get_player_name() ~= meta:get_string("owner") then
-		return false
+	local owner = meta:get_string("owner")
+	local result = false
+	if not owner or owner == "" then
+		result = true
 	end
-	return true
+	if player:get_player_name() == owner then
+		result = true
+	end
+	return result
 end
 
 function element_portals:is_portal_powered_from_inv(meta, pos)

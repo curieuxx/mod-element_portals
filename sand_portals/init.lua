@@ -20,11 +20,12 @@ local sand_portal_params=  {
 element_portals:register_private_portal_node("sand_portals:sand_portal_active", {
 	description = "Sand Portal - Input",
 	tiles = {"default_sand.png"},
-	fuel_surrounding = "default:sand",
- 	fuel_surrounding_count = 4,
+	drawtype = "liquid",
+	liquidtype = "source",
 	is_ground_content = true,
 	paramtype="light",
-	groups = {cracky=3}
+	liquid_viscosity = 30 ,
+	groups = {liquid=2, cracky=3}
 }, sand_portal_params)
 
 element_portals:register_private_portal_node("sand_portals:sand_portal", {
@@ -32,6 +33,7 @@ element_portals:register_private_portal_node("sand_portals:sand_portal", {
 	tiles = {"default_sand.png"},
 	fuel_surrounding = "default:sand",
  	fuel_surrounding_count = 4,
+ 	liquidtype = "source",
 	is_ground_content = true,
 	paramtype="light",
 	groups = {cracky=3}
@@ -98,9 +100,8 @@ minetest.register_node("sand_portals:sand_portal_vortex", {
 	liquidtype = "source",
 	is_ground_content = true,
 	walkable = false,
-	pointable = true,
-	diggable = true,
-	buildable_to = true,
+	pointable = false,
+	diggable = false,
 	paramtype="light",
 	liquid_viscosity = 30 ,
 	groups = {liquid=2, cracky=3}

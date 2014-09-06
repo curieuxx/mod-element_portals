@@ -98,6 +98,7 @@ minetest.register_on_player_receive_fields(function(player,formname,fields)
 		return
 	end
 	local meta  = retrieve_meta(fields)
+	
 	handle_update(player,fields, meta)
 	if fields['quit'] then
 		handle_teleport(player, fields, meta) 

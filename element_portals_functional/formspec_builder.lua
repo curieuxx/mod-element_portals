@@ -35,19 +35,30 @@ local append_user_inventory_form_fields = function(result, pos)
 	return result
 end
 
-local append_current_portal_form_fields = function(result, key ,data)
+local append_current_portal_form_fields = function(result, portal_data)
 	-- the ones with minus sign are supposed to be hidden
-	result = result.."field[0.3,1;4,1;portal_name;This portal Name:;"..data.portal_name.."]"
-	result = result.."field[-6,1;4,1;portal_key;This portal key:;"..key.."]"
-	result = result.."field[-7,1;4,1;portal_pos;This portal pos:;"..minetest.pos_to_string(data.pos).."]"
+	if portal_data.data then 
+		result = result.."field[0.3,1;4,1;portal_name;This portal Name:;"..portal_data.data.portal_name.."]"
+		result = result.."field[-6,1;4,1;portal_key;This portal key:;"..portal_data.key.."]"
+		result = result.."field[-7,1;4,1;portal_pos;This portal pos:;"..minetest.pos_to_string(portal_data.data.pos).."]"
+	else 
+		result = result.."label[0.3,1;Can't read portal data]"
+	end
 	return result
 end
 
-local append_active_input_portal_fields = function(result, portals, key, data, selected_portal_name)
-	local portal_filter_group = element_portals:get_portal_filter_group(data.node_name)
-	local list_result = build_portal_list(portals, key, selected_portal_name, portal_filter_group);
-	result = result.."dropdown[0,2;5;selected_portal_name;"..list_result.list..";"..list_result.selected_index.."]"
-	result = result.."button_exit[0,3;5,1;teleport;Teleport]" 
+local append_active_input_portal_fields = function(result, portal_data, selected_portal_name)
+	if portal_data.portals then
+		local filter_group
+		if portal_data.data then
+			filter_group = element_portals:get_portal_filter_group(portal_data.data.node_name)
+		end
+		local list_result = build_portal_list(portal_data.portals, portal_data.key, selected_portal_name, filter_group);
+		result = result.."dropdown[0,2;5;selected_portal_name;"..list_result.list..";"..list_result.selected_index.."]"
+		result = result.."button_exit[0,3;5,1;teleport;Teleport]"
+	else
+		result = result.."label[0.3,1;Can't read portal list]" 
+	end
 	return result
 end
 
@@ -58,16 +69,37 @@ end
 
 -- end form builder methods 
 
-function element_portals:create_portal_formspec(pos, player, selected_portal_name, active, message)
+function get_player_portal_data(pos, player)
 	local portals = element_portals:read_player_portals_table(player)
-	local this_portal_key = element_portals:construct_portal_id_key(pos, player)
-	local this_portal_data = portals[this_portal_key]
-	local portal_name = this_portal_data.portal_name
-	local portal_node = this_portal_data.node_name
-	local result = append_current_portal_form_fields( "size[8,9]", this_portal_key, this_portal_data)
+	-- extract portal data for pos and player
+	local portal_key = element_portals:construct_portal_id_key(pos, player)
+	local portal_data = portals[portal_key]
+	return {portals = portals, key = portal_key, data = portal_data}
+end
+
+function get_portal_data(pos, player) 
+	local result = get_player_portal_data(pos, player)
+	if not result.data then
+		-- Try geting data from placer
+		local meta = minetest.get_meta(pos) 
+		local placer_name = meta:get_string("placer")
+		if placer_name or placer_name ~="" then
+			 local placer = minetest.get_player_by_name(placer_name)
+		     if placer then
+		     	result = get_player_portal_data(pos, placer);
+		     end
+		end
+	end 
+	return result
+end
+
+
+function element_portals:create_portal_formspec(pos, player, selected_portal_name, active, message)
+	local portal_data = get_portal_data(pos, player)
+	local result = append_current_portal_form_fields( "size[8,9]",  portal_data)
 	local result = append_user_inventory_form_fields(result, pos)
 	if active then
-		result = append_active_input_portal_fields(result, portals,  this_portal_key, this_portal_data, selected_portal_name)	
+		result = append_active_input_portal_fields(result, portal_data, selected_portal_name)	
 	else
 		result = result.."label[0,2;Add natural element to power the portal]"
 	end 
@@ -78,13 +110,11 @@ function element_portals:create_portal_formspec(pos, player, selected_portal_nam
 	return result
 end
 
-function element_portals:create_fuel_surrounds_portal_formspec(pos, player, selected_portal_name, message)
-	local portals = element_portals:read_player_portals_table(player)
-	local this_portal_key = element_portals:construct_portal_id_key(pos, player)
-	local this_portal_data = portals[this_portal_key]
-	local result = append_current_portal_form_fields("size[5,4]", this_portal_key, this_portal_data)
+function element_portals:create_travel_free_portal_formspec(pos, player, selected_portal_name, message)
+	local portal_data = get_portal_data(pos, player)
+	local result = append_current_portal_form_fields("size[5,4]", portal_data)
 	result = append_travel_free_fields(result)
-	result = append_active_input_portal_fields(result, portals, this_portal_key, this_portal_data, selected_portal_name)	
+	result = append_active_input_portal_fields(result, portal_data, selected_portal_name)	
 	if message then
 		result = result.."label[0,4;"..message.."]"
 	end
@@ -92,10 +122,8 @@ function element_portals:create_fuel_surrounds_portal_formspec(pos, player, sele
 end
 
 function element_portals:create_out_portal_formspec(pos, player, selected_portal_name, message)
-	local portals = element_portals:read_player_portals_table(player)
-	local this_portal_key = element_portals:construct_portal_id_key(pos, player)
-	local this_portal_data = portals[this_portal_key]
-	local result = append_current_portal_form_fields("size[5,2]", this_portal_key, this_portal_data)
+	local portal_data = get_portal_data(pos, player)
+	local result = append_current_portal_form_fields("size[5,2]", portal_data)
 	return result
 end
 
