@@ -59,7 +59,7 @@ function element_portals:read_player_portals_table(player)
 	local player_name = player:get_player_name()
 	if portal_cache_enabled and portal_cache[player_name] then
 		minetest.log("info", "Reading portals for player: ".. player_name .." from cache")
-		return create_portals_copy(portal_cache[player_name].portals)
+		return copy(portal_cache[player_name].portals)
 	end
 	minetest.log("action", "Reading portals for player: ".. player_name .." from file")
 	local portals = read_from_file(player)
@@ -72,7 +72,7 @@ end
 function element_portals:write_player_portals_table (player, portals)
 	if portal_cache_enabled then	
 		local player_name = player:get_player_name()
-		portal_cache[player_name] = {portals=create_portals_copy(portals), player = player, changed = true}
+		portal_cache[player_name] = {portals=copy(portals), player = player, changed = true}
 	else
 		write_to_file(player, portals) 
 	end
