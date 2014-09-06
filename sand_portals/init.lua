@@ -20,20 +20,14 @@ local sand_portal_params=  {
 element_portals:register_private_portal_node("sand_portals:sand_portal_active", {
 	description = "Sand Portal - Input",
 	tiles = {"default_sand.png"},
-	drawtype = "liquid",
-	liquidtype = "source",
 	is_ground_content = true,
 	paramtype="light",
-	liquid_viscosity = 30 ,
-	groups = {liquid=2, cracky=3}
+	groups = {cracky=3}
 }, sand_portal_params)
 
 element_portals:register_private_portal_node("sand_portals:sand_portal", {
 	description = "Sand Portal - Input",
 	tiles = {"default_sand.png"},
-	fuel_surrounding = "default:sand",
- 	fuel_surrounding_count = 4,
- 	liquidtype = "source",
 	is_ground_content = true,
 	paramtype="light",
 	groups = {cracky=3}
@@ -94,18 +88,40 @@ element_portals:register_private_portal_node("sand_portals:desertsand_portal", {
 
 
 minetest.register_node("sand_portals:sand_portal_vortex", {
-	description = "Desert Sand Portal - Output",
+	description = "Desert Sand Portal - Vortex",
 	tiles = {"default_sand.png"},
-	drawtype = "liquid",
-	liquidtype = "source",
+	drawtype = "normal",
 	is_ground_content = true,
+	liquidtype =  "source",
+	liquid_alternative_flowing = "sand_portals:sand_portal_vortex_power_field",
+	liquid_alternative_source  = "sand_portals:sand_portal_vortex",
 	walkable = false,
 	pointable = false,
 	diggable = false,
-	paramtype="light",
+	buildable_to = true,
+	paramtype = "light",
 	liquid_viscosity = 30 ,
-	groups = {liquid=2, cracky=3}
-}, desert_sand_portal_params)
+	groups = {water=3, liquid=3}
+})
+
+minetest.register_node("sand_portals:sand_portal_vortex_power_field", {
+	description = "Desert Sand Portal - Vortex",
+	tiles = {"default_sand.png"},
+	drawtype = "airlike",
+	is_ground_content = true,
+	liquidtype =  "none",
+	liquid_alternative_flowing = "sand_portals:sand_portal_vortex_power_field",
+	liquid_alternative_source  = "sand_portals:sand_portal_vortex",
+	walkable = false,
+	pointable = false,
+	diggable = false,
+	buildable_to = true,
+	paramtype = "light",
+	--paramtype2 = "flowingliquid",
+	liquid_viscosity = 30 ,
+	groups = {water=3, liquid=3}
+})
+
 
 minetest.register_abm({
 		nodenames = {"sand_portals:sand_portal_vortex"} ,
