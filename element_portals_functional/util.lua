@@ -22,3 +22,8 @@ function element_portals:contains_any(str, values)
 	end
 	return false
 end
+
+
+function element_portals:deep_copy(from)
+   return minetest.deserialize(minetest.serialize(from))
+end

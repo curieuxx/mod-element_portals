@@ -5,29 +5,6 @@ end
 element_portals.registered_portals = {}
 element_portals.disabled_portal_keys = {}
 
-function element_portals:read_player_portals_table(player)
-	local player_name = player:get_player_name();
-	local portals = {}
-	local file = io.open(minetest.get_worldpath().."/portals_"..player_name, "r")
-	if file then
-		portals = minetest.deserialize(file:read("*all"))
-		file:close()
-	end
-	if not portals then
-		portals = {} 
-	end
-	return portals
-end
-
-function element_portals:write_player_portals_table (player, portals)
-	local player_name = player:get_player_name();
-	local file = io.open(minetest.get_worldpath().."/portals_"..player_name, "w")
-	if file then
-		file:write(minetest.serialize(portals))
-		file:close()
-	end
-end
-
 function element_portals:construct_portal_id_key (pos, player)
 	local name = player:get_player_name()
 	local coords = minetest.pos_to_string(pos)
@@ -165,15 +142,21 @@ function element_portals:get_portal_filter_group(node_name)
 end
 
 function element_portals:is_registered_out_portal(node_name, group)
+	
 	if element_portals.registered_portals[node_name] then
 		local data = element_portals.registered_portals[node_name]
+		
 		local out_type = data.portal_type == element_portals.IN_OUT_PORTAL 
 				or data.portal_type == element_portals.OUT_PORTAL
-		local in_group = element_portals:table_contains(group, data.portal_groups) 
+		
+		local in_group = element_portals:table_contains(group, data.portal_groups)
 		if out_type and in_group then
 			return true
 		end
-	end 
+		
+	else 
+		minetest.log("action", node_name .." is not a registered portal")
+	end
 	return false
 end
 
@@ -249,11 +232,12 @@ end
 
 local check_portal = function(portal_key, portal_params)
 	local node_data = element_portals:get_portal_node_data(portal_key, portal_params)
-	return element_portals:is_registered_out_portal(node_data.node.name) 
+	return element_portals:is_registered_out_portal(node_data.node.name)
 end
 
 function element_portals:teleport_to(selected_portal_name, player, travel_free, meta)
 	local portals = element_portals:read_player_portals_table(player)
+	local k,v
 	for k,v in pairs(portals) do
 		if v.portal_name ==  selected_portal_name then
 			local valid_end_point_portal = check_portal(k, v)
@@ -273,6 +257,6 @@ end
 -- run a sanitize when player joins when the player joins
 minetest.register_on_joinplayer(function(player) 
   if player then
-  	element_portals:sanitize_player_portals(player)
+  	 element_portals:sanitize_player_portals(player)
   end 
 end)
