@@ -177,10 +177,10 @@ minetest.register_abm({
 local desert_sand_portal_params =  {
  portal_type = element_portals.OUT_PORTAL,
  portal_groups = {"sand_portals"},
- active_node = "sand_portals:desertsand_portal"
+ active_node = "sand_portals:desert_sand_portal"
 }
 
-element_portals:register_private_portal_node("sand_portals:desertsand_portal", {
+element_portals:register_private_portal_node("sand_portals:desert_sand_portal", {
 	description = "Desert Sand Portal - Output",
 	tiles = {"default_desert_sand.png^portal_glass.png",  "default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png","default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png"},
 	is_ground_content = true,
@@ -279,4 +279,31 @@ minetest.register_abm({
 			end			 
 		end
 	})
+	
+minetest.register_craft({
+	output = 'sand_portals:sand_portal',
+	recipe = {
+		{'default:glass', 'sand_portals:quick_sand', 'default:glass'},
+		{'default:glass', 'default:mese_crystal', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'}
+	}
+})
+
+minetest.register_craft({
+	output = 'sand_portals:desert_sand_portal',
+	recipe = {
+		{'default:glass', 'default:desert_sand', 'default:glass'},
+		{'default:glass', 'default:mese_crystal', 'default:glass'},
+		{'default:glass', 'default:glass', 'default:glass'}
+	}
+})
+
+minetest.register_craft({
+	output = 'sand_portals:quick_sand',
+	recipe = {
+		{'', 'default:sand', ''},
+		{'', 'bucket:bucket_water', ''},
+		{'', '', ''}
+	}
+})
 
