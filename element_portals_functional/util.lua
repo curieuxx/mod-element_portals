@@ -7,3 +7,23 @@ function element_portals:tablelength(table)
   for _ in pairs(table) do count = count + 1 end
   return count
 end
+
+function element_portals:string_starts(str,start)
+   return string.sub(str,1,string.len(start))==start
+end
+
+function element_portals:contains_any(str, values)
+	if values then
+		for i, value in pairs(values) do
+			if value and string.find(str, value) then 
+				return true
+			end
+		end
+	end
+	return false
+end
+
+
+function element_portals:deep_copy(from)
+   return minetest.deserialize(minetest.serialize(from))
+end
