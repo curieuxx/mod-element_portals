@@ -70,7 +70,31 @@ local node_box = {
 	}
 
 
-
+local vortex_node_box =  {
+		type = "fixed",
+		fixed = {
+			{0.4375, -0.5, -0.125, 0.5, 0.5, 0.125}, -- NodeBox1
+			{0.375, -0.5, 0.125, 0.4375, 0.5, 0.25}, -- NodeBox2
+			{0.3125, -0.5, 0.25, 0.375, 0.5, 0.3125}, -- NodeBox3
+			{0.25, -0.5, 0.25, 0.3125, 0.5, 0.375}, -- NodeBox4
+			{0.125, -0.5, 0.375, 0.25, 0.5, 0.4375}, -- NodeBox5
+			{-0.125, -0.5, 0.4375, 0.125, 0.5, 0.5}, -- NodeBox6
+			{-0.25, -0.5, 0.375, -0.125, 0.5, 0.4375}, -- NodeBox7
+			{-0.3125, -0.5, 0.25, -0.25, 0.5, 0.375}, -- NodeBox8
+			{-0.375, -0.5, 0.25, -0.3125, 0.5, 0.3125}, -- NodeBox9
+			{-0.4375, -0.5, 0.125, -0.375, 0.5, 0.25}, -- NodeBox10
+			{-0.5, -0.5, -0.125, -0.4375, 0.5, 0.125}, -- NodeBox11
+			{-0.125, -0.5, -0.5, 0.125, 0.5, -0.4375}, -- NodeBox12
+			{-0.25, -0.5, -0.4375, -0.125, 0.5, -0.375}, -- NodeBox13
+			{-0.4375, -0.5, -0.25, -0.375, 0.5, -0.125}, -- NodeBox14
+			{-0.375, -0.5, -0.3125, -0.25, 0.5, -0.25}, -- NodeBox15
+			{-0.3125, -0.5, -0.375, -0.25, 0.5, -0.3125}, -- NodeBox18
+			{0.125, -0.5, -0.4375, 0.25, 0.5, -0.375}, -- NodeBox19
+			{0.375, -0.5, -0.25, 0.4375, 0.5, -0.125}, -- NodeBox20
+			{0.25, -0.5, -0.375, 0.375, 0.5, -0.3125}, -- NodeBox21
+			{0.3125, -0.5, -0.3125, 0.375, 0.5, -0.25}, -- NodeBox22
+		}
+	}
 
 local sand_portal_params=  {
  fuel_stack = "default:sand 1",
@@ -93,7 +117,7 @@ local sand_portal_params=  {
 
 element_portals:register_private_portal_node("sand_portals:sand_portal_active", {
 	description = "Sand Portal - Input",
-	tiles = {"default_sand.png"},
+	tiles = {{name="sand_portal_anim.png", animation={type="vertical_frames", aspect_w=16, aspect_h=16, length=1.0}}, "default_sand.png^default_glass.png", "default_sand.png^default_glass.png", "default_sand.png^default_glass.png","default_sand.png^default_glass.png", "default_sand.png^default_glass.png"},
 	is_ground_content = true,
 	drawtype = "nodebox",
 	node_box = node_box,
@@ -103,7 +127,8 @@ element_portals:register_private_portal_node("sand_portals:sand_portal_active", 
 
 element_portals:register_private_portal_node("sand_portals:sand_portal", {
 	description = "Sand Portal - Input",
-	tiles = {"default_sand.png"},
+	tiles = {"default_sand.png^portal_glass.png",  "default_sand.png^default_glass.png", "default_sand.png^default_glass.png", "default_sand.png^default_glass.png","default_sand.png^default_glass.png", "default_sand.png^default_glass.png"},
+
 	is_ground_content = true,
 	drawtype = "nodebox",
 	node_box = node_box,
@@ -118,7 +143,7 @@ local teleport_to = function(selected_portal_name, player, meta)
 end
 
 local player_in_radius = function (pos, player_name) 
-	local all_objects = minetest.get_objects_inside_radius(pos, element_portals.SCAN_RADIUS or 1)
+	local all_objects = minetest.get_objects_inside_radius(pos, element_portals.AUTO_TELEPORT_SCAN_RADIUS or 2)
 	local players = {}
 	local _,obj
 	local result = false
@@ -157,7 +182,7 @@ local desert_sand_portal_params =  {
 
 element_portals:register_private_portal_node("sand_portals:desertsand_portal", {
 	description = "Desert Sand Portal - Output",
-	tiles = {"default_sand.png"},
+	tiles = {"default_desert_sand.png^portal_glass.png",  "default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png","default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png"},
 	is_ground_content = true,
 	drawtype = "nodebox",
 	node_box = node_box,
@@ -166,13 +191,54 @@ element_portals:register_private_portal_node("sand_portals:desertsand_portal", {
 }, desert_sand_portal_params)
 
 
+minetest.register_node("sand_portals:quick_sand", {
+	description = "Quick Sand",
+	tiles = {{name="quick_sand_top_anim.png", animation={type="vertical_frames", aspect_w=16, aspect_h=16, length=1.0}},"default_sand.png", "default_sand.png", "default_sand.png","default_sand.png", "default_sand.png"},
+	is_ground_content = true,
+	use_texture_alpha = true,
+	liquidtype =  "source",
+	liquid_alternative_flowing = "sand_portals:quick_sand_field",
+	liquid_alternative_source  = "sand_portals:quick_sand",
+	walkable = true,
+	drop = "default:sand",
+	pointable = true,
+	diggable = true,
+	buildable_to = true,
+	liquid_renewable = false,
+	paramtype = "light",
+	
+	liquid_viscosity = LAVA_VISC-3 ,
+	groups = {water=3, liquid=3, crumbly=3, sand=1}
+})
+
+minetest.register_node("sand_portals:quick_sand_field", {
+	description = "Quick Sand Field",
+	tiles = {"default_sand.png"},
+	drawtype = "airlike",
+	is_ground_content = true,
+	liquidtype =  "none",
+	liquid_alternative_flowing = "sand_portals:quick_sand_field",
+	liquid_alternative_source  = "sand_portals:quick_sand",
+	walkable = false,
+	pointable = false,
+	diggable = false,
+	buildable_to = true,
+	paramtype = "light",
+	liquid_viscosity = 30 ,
+	groups = {water=3, liquid=3}
+})
+
 
 minetest.register_node("sand_portals:sand_portal_vortex", {
 	description = "Desert Sand Portal - Vortex",
-	tiles = {"default_sand.png"},
-	drawtype = "normal",
+	--tiles = {{name="vortex_anim.png", animation={type="vertical_frames", aspect_w=16, aspect_h=16, length=0.5}}},
+	tiles = {"vortex_right.png","vortex_left.png", "vortex_right.png", "vortex_left.png","vortex_right.png", "vortex_left.png"},
+	drawtype = "nodebox",
 	is_ground_content = true,
+	use_texture_alpha = true,
 	liquidtype =  "source",
+	light_source = LIGHT_MAX - 1,
+	node_box = vortex_node_box,
 	liquid_alternative_flowing = "sand_portals:sand_portal_vortex_power_field",
 	liquid_alternative_source  = "sand_portals:sand_portal_vortex",
 	walkable = false,
@@ -185,7 +251,7 @@ minetest.register_node("sand_portals:sand_portal_vortex", {
 })
 
 minetest.register_node("sand_portals:sand_portal_vortex_power_field", {
-	description = "Desert Sand Portal - Vortex",
+	description = "Desert Sand Portal - Vortex Field",
 	tiles = {"default_sand.png"},
 	drawtype = "airlike",
 	is_ground_content = true,
@@ -197,7 +263,6 @@ minetest.register_node("sand_portals:sand_portal_vortex_power_field", {
 	diggable = false,
 	buildable_to = true,
 	paramtype = "light",
-	--paramtype2 = "flowingliquid",
 	liquid_viscosity = 30 ,
 	groups = {water=3, liquid=3}
 })
