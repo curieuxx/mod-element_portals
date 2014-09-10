@@ -67,7 +67,7 @@ Under development
 Licence
 -------
 
-Copyright Tiberiu Corbu
+Copyright 2014 Tiberiu Corbu
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -80,4 +80,20 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+Licence for media files (textures and sounds)
+----------------------------------------------
+
+Copyright 2014 Tiberiu Corbu
+
+Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+http://creativecommons.org/licenses/by-sa/3.0/
+ 
+Reffer to each `README.md` file from the submodules `textures` folder for licence, details about derivations from the original and original authors of individual files used.
+
+These are :
+
+ * [Liquid Portals Textures README.md](./liquid_portals/textures/README.md)
+ * [Tree Portals Textures README.md](./tree_portals/textures/README.md)
+ * [Sand Portals Textures README.md](./sand_portals/textures/README.md)
 
