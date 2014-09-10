@@ -84,7 +84,7 @@ limitations under the License.
 Licence for media files (textures and sounds)
 ----------------------------------------------
 
-Copyright 2014 Tiberiu Corbu
+Author 2014 Tiberiu Corbu
 
 Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 http://creativecommons.org/licenses/by-sa/3.0/
