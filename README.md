@@ -7,10 +7,15 @@ What is new ?
 -------------
 
 
-New Features:
+New Portals and Nodes:
+
  - Tree portals [Implemented]
  - Sand portals [Implemented]
  - Quick sand needed for sand portals [Implemneted] 
+
+ 
+New technical features :
+
  - Item portals functions [Implemented] - allows to implement tools or items that act as IN portals
  - Portal filtering by their direction types (IN_OUT, IN, OUT) and groups [Implemented]
  - Allow portals to be powered with surounding elements [implemented]
@@ -60,8 +65,6 @@ Current portals
 Under development
 -------------------------
 
-
- * __Tree portal__ <strike> as home portal, the portal grows a tree from which you can take branches and use later to get back home</strike>
  * __Dirt portals__ for short distance public use
 
 
