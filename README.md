@@ -23,9 +23,9 @@ Bufixes for existing portals :
 
  - Portal name is generated with duplicates #9
  - Portal data is not syncronized with the node when burned or pulverized by tnt #10
- - Portal list from portal form contained and empty item [fixed]
- - Overhead in register_abm for liquid portals [fixed]
- - Double consumption on teleport [fixed]
+ - Portal list from portal form contained and empty item #11
+ - Overhead in register_abm for liquid portals #12
+ - Double consumption on teleport #13
  - Various performance, complexity, DRY and cycle dependency fixes [ongoing]
 
 
