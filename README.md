@@ -3,7 +3,35 @@ Element Portals
 
 A [Minetest](http://minetest.net/) mod that adds teleport capabilities in the game trough the natural elements found in the world. Portals can have a custom name and you can select your destination. The mod is separated in submodules so you can chose to use a subset of these portals.
 
-What is new ?
+Usage / Wiki
+------------
+
+A wiki with pictures and details is here :  [https://github.com/curieuxx/mod-element_portals/wiki](https://github.com/curieuxx/mod-element_portals/wiki)
+ 
+Dependencies
+------------
+Just mods found in defaults:
+
+ - default
+ - bucket
+ - dye [new]
+
+
+Install
+-------
+Download the [zip](https://github.com/curieuxx/mod-element_portals/archive/master.zip) or clone the url (so far no release)  and unpack into your mintest `mods` as described here: [Installing Mods](http://wiki.minetest.com/wiki/Installing_Mods) or here : [Installing_Mods](http://dev.minetest.net/Installing_Mods). Don't forget to enable it from world configuration.
+
+
+Current portals
+---------------
+
+ * __Water portal__ uses water as connection and power, they are private and you can select your end point
+ * __Lava portal__ act like water portals but use lava as connection and power
+ * __Tree portal__ as home portal, the portal grows roots that can be harvested, when you need to get back home just plant the root and a link will be created to all of your tree portals where you can teleport. The planted root will slowly grow into a tree sapling after a while
+ * __Sand portal__ used as fast escapes - just step on it and your on the other end
+
+
+What is new in the last milestone  ?
 -------------
 
 
@@ -34,33 +62,7 @@ Bufixes for existing portals :
  - Various performance, complexity, DRY and cycle dependency fixes [ongoing]
 
 
- 
-Dependencies
-------------
-Just mods found in defaults:
 
- - default
- - bucket
- - dye [new]
-
-
-Install
--------
-Download the [zip](https://github.com/curieuxx/mod-element_portals/archive/master.zip) or clone the url (so far no release)  and unpack into your mintest `mods` as described here: [Installing Mods](http://wiki.minetest.com/wiki/Installing_Mods) or here : [Installing_Mods](http://dev.minetest.net/Installing_Mods). Don't forget to enable it from world configuration.
-
-Usage / Wiki
-------------
-
-A wiki with pictures and details is here :  [https://github.com/curieuxx/mod-element_portals/wiki](https://github.com/curieuxx/mod-element_portals/wiki)
-
-
-Current portals
----------------
-
- * __Water portal__ uses water as connection and power, they are private and you can select your end point
- * __Lava portal__ act like water portals but use lava as connection and power
- * __Tree portal__ as home portal, the portal grows roots that can be harvested, when you need to get back home just plant the root and a link will be created to all of your tree portals where you can teleport. The planted root will slowly grow into a tree sapling after a while
- * __Sand portal__ used as fast escapes - just step on it and your on the other end
 
 Under development
 -------------------------
