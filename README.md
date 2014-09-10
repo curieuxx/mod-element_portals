@@ -6,26 +6,27 @@ A [Minetest](http://minetest.net/) mod that adds teleport capabilities in the ga
 What is new ?
 -------------
 
-Bufixes for existing portals : 
-
- - Portal name is generated with duplicates [fixed]
- - Portal data is not syncronized with the node when burned or pulverized by tnt [fixed]
- - Portal list from portal form contained and empty item [fixed]
- - Overhead in register_abm for liquid portals [fixed]
- - Double consumption on teleport [fixed]
- - Various performance, complexity, DRY and cycle dependency fixes [ongoing]
 
 New Features:
-
- - Sanitize portals - Checks for data and node pair, if they are not in sync then they are fixed - allows introducing new featres without needing to clear world alteration made by previous implementation [implemented]
- - Allow portals to be powered with surounding elements [implemented]
  - Tree portals [Implemented]
  - Sand portals [Implemented]
  - Quick sand needed for sand portals [Implemneted] 
  - Item portals functions [Implemented] - allows to implement tools or items that act as IN portals
  - Portal filtering by their direction types (IN_OUT, IN, OUT) and groups [Implemented]
+ - Allow portals to be powered with surounding elements [implemented]
  - Other utility methods that will help for the future portal nodes [Implemented]
  - '/teleport_free' command [Implemented]
+ - Sanitize portals - Checks for data and node pair, if they are not in sync then they are fixed - allows introducing new featres without needing to clear world alteration made by previous implementation [implemented]
+
+
+Bufixes for existing portals : 
+
+ - Portal name is generated with duplicates #9
+ - Portal data is not syncronized with the node when burned or pulverized by tnt #10
+ - Portal list from portal form contained and empty item [fixed]
+ - Overhead in register_abm for liquid portals [fixed]
+ - Double consumption on teleport [fixed]
+ - Various performance, complexity, DRY and cycle dependency fixes [ongoing]
 
 
  
