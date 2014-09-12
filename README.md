@@ -37,9 +37,9 @@ What is new in the last milestone  ?
 
 New Portals and Nodes:
 
- - Tree portals [Implemented]
- - Sand portals [Implemented]
- - Quick sand needed for sand portals [Implemneted] 
+ - [Tree portals](https://github.com/curieuxx/mod-element_portals/wiki/Tree-Portals) [Implemented]
+ - [Sand portals](https://github.com/curieuxx/mod-element_portals/wiki/Sand-Portals) [Implemented]
+ - [Quick sand](https://github.com/curieuxx/mod-element_portals/wiki/Sand-Portals#quick-sand) needed for sand portals [Implemneted] 
 
  
 New technical features :
@@ -67,7 +67,12 @@ Bufixes for existing portals :
 Under development
 -------------------------
 
- * __Dirt portals__ for short distance public use
+   * Dirt portal - Public portal that helps you teleport to nearby players by "digging" tunnels.
+
+   * Stone box - Doesn't teleport a player but works more or less like a locked chest but it's inventory is shared across all stone boxes.
+
+   * Maybe a Mese portal - Expensive to craft but with all the abilities of the other portals elements. "Maybe" mainly because it may shade the other portal types.
+
 
 
 Licence
