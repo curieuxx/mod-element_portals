@@ -7,6 +7,9 @@ dofile(minetest.get_modpath(MOD_NAME).."/constants.lua")
 dofile(minetest.get_modpath(MOD_NAME).."/portal_data_api.lua")
 
 dofile(minetest.get_modpath(MOD_NAME).."/privilege.lua")
+
+dofile(minetest.get_modpath(MOD_NAME).."/sound_api.lua")
+
 -- forms manip.
 dofile(minetest.get_modpath(MOD_NAME).."/formspec_builder.lua")
 dofile(minetest.get_modpath(MOD_NAME).."/form.lua")

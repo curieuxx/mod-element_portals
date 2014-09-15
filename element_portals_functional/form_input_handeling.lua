@@ -1,4 +1,22 @@
+--[[
 
+Handle portal form submission functions, creates a bridge between the variables received the form and the "service" functions. 
+
+Copyright 2014 Tiberiu CORBU
+Authors: Tiberiu CORBU
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+--]]
+-- Namespace
+if not element_portals then
+	element_portals = {}
+end
+
+-- 
 local handle_update = function(player, fields, meta)
     if fields["selected_portal_name"] and meta then
     	meta:set_string("selected_portal_name", fields["selected_portal_name"] or "")
@@ -11,48 +29,23 @@ local handle_update = function(player, fields, meta)
 	end
 end
 
-function element_portals:consume_fuel(meta, player)
-	local inv = meta:get_inventory()
-	local fuel_stack = meta:get_string("fuel_stack")
-	
-	if inv:contains_item("fuel", fuel_stack) then
-		-- exception for bucket with water, lava or anything else - be god and just empty the bucket
-		
-		local take_stack = ItemStack(fuel_stack)
-		
-		local inv_list = inv:get_list("fuel");
-		local inv_stack = inv_list[1];
-		-- 						   ^ - magic number that works
-		inv_stack:take_item(take_stack:get_count())
-		-- mintest support about stacks is poor documented -- any simple solution ?  
-		if element_portals:string_starts(fuel_stack, "bucket:bucket") and inv_stack:get_count() == 0 then
-			inv:set_list("fuel", {"bucket:bucket_empty 1"}) 
-		else 
-			inv:set_list("fuel", {inv_stack})
-		end	 
-		return true
-	else 
-		return false
-	end
-end
-
-local handle_teleport = function(player, fields, meta)
+local handle_teleport = function(player, fields, meta_and_pos)
 	if fields["selected_portal_name"] and fields["teleport"] == "Teleport" then
 		local selected_portal_name = fields["selected_portal_name"]
 		local travel_free = fields["travel_free"] == "true"
-		element_portals:teleport_to(selected_portal_name, player, travel_free, meta)
+		element_portals:teleport_to(selected_portal_name, player, travel_free, meta_and_pos)
 	end
 end
 
-local retrieve_meta = function(fields)
-	local meta
+local retrieve_meta_and_pos = function(fields)
+	local result
 	if fields["portal_pos"]  then
 		local pos = minetest.string_to_pos(fields["portal_pos"])
 		if pos then 
-			meta = minetest.get_meta(pos)
+			result = {meta = minetest.get_meta(pos), pos = pos}
 		end
 	end
-	return meta
+	return result
 end
 
 function element_portals:update_portal_name(player, portal_key, new_name)
@@ -93,14 +86,16 @@ function element_portals:update_portal_name(player, portal_key, new_name)
 	end
 end
 
+
 minetest.register_on_player_receive_fields(function(player,formname,fields)
 	if formname ~= element_portals.PORTAL_FORM_NAME then 
 		return
 	end
-	local meta  = retrieve_meta(fields)
-	
-	handle_update(player,fields, meta)
+	local meta_and_pos  = retrieve_meta_and_pos(fields)
+	if meta_and_pos then
+		handle_update(player, fields, meta_and_pos.meta)
+	end
 	if fields['quit'] then
-		handle_teleport(player, fields, meta) 
+		handle_teleport(player, fields, meta_and_pos) 
 	end
 end)

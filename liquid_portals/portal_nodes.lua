@@ -57,6 +57,9 @@ local water_portal_params =  {
  active_node = "liquid_portals:water_portal_active", 
  inactive_node = "liquid_portals:water_portal",
  swap_enabled = true, 
+ sounds = {
+ 	{action=element_portals.TELEPORT_ACTION ,sound="water_splash"}	
+ },
  replace_surroundings = {
  	except_nodes_containing_in_name = {"water_source", "water_flowing", "portal_ray" },
  	offsets = {
@@ -116,6 +119,10 @@ local lava_portal_params =  {
  inactive_node = "liquid_portals:lava_portal",
  leaks = "liquid_portals:lava_flowing",
  swap_enabled = true,
+ sounds = {
+ 	{action=element_portals.TELEPORT_ACTION ,sound="fireball_whoosh"}
+ 	
+ },
  replace_surroundings = {
  	except_nodes_containing_in_name = {"lava_source", "lava_flowing", "portal_ray" },
  	offsets = {

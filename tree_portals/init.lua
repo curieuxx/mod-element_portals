@@ -4,11 +4,6 @@
 
 minetest.register_node("tree_portals:node_back_left", {
 	tiles = {
-		"default_tree.png",
-		"default_tree.png",
-		"default_tree.png",
-		"default_tree.png",
-		"default_tree.png",
 		"default_tree.png"
 	},
 	drawtype = "nodebox",
@@ -38,11 +33,6 @@ minetest.register_node("tree_portals:node_back_left", {
 minetest.register_node("tree_portals:node_middle_left", {
 	tiles = {
 		"default_tree.png",
-		"default_tree.png",
-		"default_tree.png",
-		"default_tree.png",
-		"default_tree.png",
-		"default_tree.png"
 	},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -193,6 +183,9 @@ local tree_portal_params =  {
  portal_type = element_portals.OUT_PORTAL, 
  replace_surroundings = {
  	except_nodes_containing_in_name = {"node" },
+ 	sounds = {
+ 		{action=element_portals.SUCCESFUL_NODE_REPLACE_ACTION, sound="growing_plant"}
+ 	},
  	offsets = {
  		-- if unspecified replacement_node_names, air is the default 
  		-- back

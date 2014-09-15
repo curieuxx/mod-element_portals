@@ -98,19 +98,25 @@ function element_portals:iterate_offsets (pos, params, callback)
 	end
 end
 
-
 function element_portals:handle_replace_surroundings(node_name, pos, params)
 	if node_name == params.active_node and params.replace_surroundings  then
+		local replaced_at_least_one_node = false
+	
 		local callback = function( buffer_pos, node_name_matched, replacement_node_name, affected_node_name)
 			minetest.dig_node(buffer_pos)
 			if replacement_node_name and replacement_node_name~="air" then 
 				node = minetest.get_node(buffer_pos)
 				if node.name ~= replacement_node_name then
+					replaced_at_least_one_node  = true
 					minetest.set_node(buffer_pos, {name=replacement_node_name})
 				end
 			end
 		end
+
 		element_portals:iterate_offsets(pos, params.replace_surroundings, callback)
+		if replaced_at_least_one_node and params.replace_surroundings.sounds then 
+			element_portals:play_action_sound_at_pos(pos, element_portals.SUCCESFUL_NODE_REPLACE_ACTION, params.replace_surroundings.sounds) 
+		end
 	end
 end
 
