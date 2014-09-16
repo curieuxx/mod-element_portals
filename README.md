@@ -92,19 +92,31 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-Licence for media files (textures and sounds)
-----------------------------------------------
+Licence for textures
+--------------------
 
 Author 2014 Tiberiu Corbu
 
 Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 http://creativecommons.org/licenses/by-sa/3.0/
  
-Reffer to each `README.md` file from the submodules `textures` folder for licence, details about derivations from the original and original authors of individual files used.
+Refer to each `README.md` file from the submodules `textures` folder for licence, details about derivations from the original and original authors of individual files used.
 
 These are :
 
  * [Liquid Portals Textures README.md](./liquid_portals/textures/README.md)
  * [Tree Portals Textures README.md](./tree_portals/textures/README.md)
  * [Sand Portals Textures README.md](./sand_portals/textures/README.md)
+
+Licence for sounds
+------------------
+
+Refer to each `README.md` file from the submodules `sounds` folder for licence, details about derivations from the original and original authors of individual files used.
+ 
+These are :
+
+ * [Liquid Portals Sounds README.md](./liquid_portals/sounds/README.md)
+ * [Tree Portals Sound README.md](./tree_portals/sounds/README.md)
+ 
+
 
