@@ -215,7 +215,7 @@ element_portals:register_private_portal_node("tree_portals:tree_portal", {
 		"default_tree.png"
 	},
 	drawtype = "nodebox",
-	
+	description = "Tree Portal",
 	paramtype = "light",
 	groups = {tree=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 	node_box = {
@@ -387,8 +387,8 @@ minetest.register_node("tree_portals:tree_portal_root", {
 
 minetest.register_abm({
 		nodenames = {"tree_portals:tree_portal_root"} ,
-		interval = 15,
-		chance = 3,
+		interval = 30,
+		chance = 10,
 		action = function(pos, node, active_object_count, active_object_count_wider)	
 			minetest.set_node(pos, {name="default:sapling"})			 
 		end

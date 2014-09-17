@@ -17,6 +17,7 @@ if not element_portals then
 end
 
 element_portals.registered_portals = {}
+-- unused
 element_portals.disabled_portal_keys = {}
 
 -- builds a key form the position and the player instances. 
@@ -27,14 +28,16 @@ function element_portals:construct_portal_id_key (pos, player)
 	return name..coords
 end
 
+-- Unused
 function element_portals:get_portal_data_by_key(key)
 	local portals = element_portals:read_player_portals_table(player)
 	return portals[key]
 end
 
+-- Unused 
 function element_portals:get_portal_data(pos, player)
 	local key = portal_key or element_portals:construct_portal_id_key(pos, player)
-	element_portals:get_portal_data_by_key(key)
+	return element_portals:get_portal_data_by_key(key)
 end
 
 function element_portals:remove_portal_data (pos, player)
@@ -57,6 +60,7 @@ end
 function element_portals:table_contains(value, values) 
 	local result = false
 	if values and value then
+		local _, check_value
 		for _, check_value in pairs(values) do
 			if check_value  == value then
 				result = true
@@ -95,7 +99,6 @@ end
 function element_portals:create_portal(pos, player, node_name) 
 	local name = player:get_player_name()
 	local coords = minetest.pos_to_string(pos)
-	minetest.chat_send_player(name, "Attempting to create portal at "..coords..".")
 	if not player then
 		minetest.chat_send_player(name, "Failed to create portal at "..coords..". Player is not set")
 		return
@@ -229,7 +232,7 @@ function element_portals:fix_portal_data(k, v)
 	local node = node_data.node
 	local node_name = node.name
 	if not element_portals:is_registerd_portal(node_name) then
-		minetest.log("error", "Portal with key "..k.." of type  ".. node_name.." is not registered") 
+		minetest.log("info", "Portal with key "..k.." of type  ".. node_name.." is not registered") 
 		if node_name == 'air' then
 			-- remove from data - but delegate to 
 			return element_portals.REMOVE_PORTAL_ACTION

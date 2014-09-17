@@ -88,6 +88,7 @@ end
 
 
 minetest.register_on_player_receive_fields(function(player,formname,fields)
+	-- check if is the right form and escape if not
 	if formname ~= element_portals.PORTAL_FORM_NAME then 
 		return
 	end

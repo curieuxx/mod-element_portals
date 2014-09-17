@@ -1,6 +1,6 @@
 --[[
 
-Privilege and allow disallow rules 
+Privilege and allow/disallow rules 
 
 Copyright 2014 Tiberiu CORBU
 Authors: Tiberiu CORBU

@@ -230,7 +230,7 @@ minetest.register_node("sand_portals:quick_sand_field", {
 
 
 minetest.register_node("sand_portals:sand_portal_vortex", {
-	description = "Desert Sand Portal - Vortex",
+	description = "Sand Portal - Vortex",
 	--tiles = {{name="vortex_anim.png", animation={type="vertical_frames", aspect_w=16, aspect_h=16, length=0.5}}},
 	tiles = {"vortex_right.png","vortex_left.png", "vortex_right.png", "vortex_left.png","vortex_right.png", "vortex_left.png"},
 	drawtype = "nodebox",
@@ -246,12 +246,12 @@ minetest.register_node("sand_portals:sand_portal_vortex", {
 	diggable = false,
 	buildable_to = true,
 	paramtype = "light",
-	liquid_viscosity = 30 ,
+	liquid_viscosity = LAVA_VISC,
 	groups = {water=3, liquid=3}
 })
 
 minetest.register_node("sand_portals:sand_portal_vortex_power_field", {
-	description = "Desert Sand Portal - Vortex Field",
+	description = "Sand Portal - Vortex Field",
 	tiles = {"default_sand.png"},
 	drawtype = "airlike",
 	is_ground_content = true,
