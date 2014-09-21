@@ -1,101 +1,3 @@
--- GENERATED CODE
--- Node Box Editor, version 0.7 - Iron
--- Namespace: test
-
-local node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.1875, -0.5, 0.375, 0.1875, 0.5, 0.5}, -- NodeBox3
-			{-0.25, -0.5, 0.3125, -0.1875, 0.5, 0.5}, -- NodeBox4
-			{-0.3125, -0.5, 0.25, -0.25, 0.5, 0.5}, -- NodeBox5
-			{-0.375, -0.5, 0.1875, -0.3125, 0.5, 0.5}, -- NodeBox6
-			{-0.5, -0.5, -0.5, -0.375, 0.5, 0.5}, -- NodeBox7
-			{-0.375, -0.5, -0.5, -0.3125, 0.5, -0.1875}, -- NodeBox8
-			{-0.3125, -0.5, -0.5, -0.25, 0.5, -0.25}, -- NodeBox9
-			{-0.25, -0.5, -0.5, -0.1875, 0.5, -0.3125}, -- NodeBox10
-			{-0.1875, -0.5, -0.5, 0.1875, 0.5, -0.375}, -- NodeBox11
-			{0.1875, -0.5, -0.5, 0.25, 0.5, -0.3125}, -- NodeBox12
-			{0.25, -0.5, -0.5, 0.3125, 0.5, -0.25}, -- NodeBox13
-			{0.3125, -0.5, -0.5, 0.375, 0.5, -0.1875}, -- NodeBox14
-			{0.375, -0.5, -0.5, 0.5, 0.5, 0.5}, -- NodeBox15
-			{0.3125, -0.5, 0.1875, 0.375, 0.5, 0.5}, -- NodeBox16
-			{0.25, -0.5, 0.25, 0.3125, 0.5, 0.5}, -- NodeBox17
-			{0.1875, -0.5, 0.3125, 0.25, 0.5, 0.5}, -- NodeBox18
-			{-0.1875, -0.5, 0.3125, 0.1875, 0.375, 0.375}, -- NodeBox19
-			{-0.25, -0.5, 0.25, -0.125, 0.375, 0.3125}, -- NodeBox20
-			{-0.3125, -0.5, 0.125, -0.25, 0.375, 0.25}, -- NodeBox21
-			{-0.375, -0.5, -0.1875, -0.3125, 0.375, 0.1875}, -- NodeBox22
-			{-0.3125, -0.5, -0.25, -0.25, 0.375, -0.125}, -- NodeBox23
-			{-0.25, -0.5, -0.3125, -0.125, 0.375, -0.25}, -- NodeBox24
-			{-0.1875, -0.5, -0.375, 0.1875, 0.375, -0.3125}, -- NodeBox25
-			{0.125, -0.5, -0.3125, 0.25, 0.375, -0.25}, -- NodeBox26
-			{0.25, -0.5, -0.25, 0.3125, 0.375, -0.125}, -- NodeBox27
-			{0.3125, -0.5, -0.1875, 0.375, 0.375, 0.1875}, -- NodeBox28
-			{0.25, -0.5, 0.125, 0.3125, 0.375, 0.25}, -- NodeBox29
-			{0.125, -0.5, 0.25, 0.25, 0.375, 0.3125}, -- NodeBox30
-			{-0.125, -0.5, 0.25, 0.125, 0.25, 0.3125}, -- NodeBox31
-			{-0.25, -0.5, 0.1875, -0.125, 0.25, 0.25}, -- NodeBox32
-			{-0.25, -0.5, 0.125, -0.1875, 0.25, 0.1875}, -- NodeBox33
-			{-0.3125, -0.5, -0.125, -0.25, 0.25, 0.125}, -- NodeBox34
-			{-0.25, -0.5, -0.1875, -0.1875, 0.25, -0.125}, -- NodeBox35
-			{-0.25, -0.5, -0.25, -0.125, 0.25, -0.1875}, -- NodeBox36
-			{-0.125, -0.5, -0.3125, 0.125, 0.25, -0.25}, -- NodeBox37
-			{0.125, -0.5, -0.25, 0.1875, 0.25, -0.1875}, -- NodeBox38
-			{0.1875, -0.5, -0.25, 0.25, 0.25, -0.125}, -- NodeBox39
-			{0.25, -0.5, -0.125, 0.3125, 0.25, 0.125}, -- NodeBox40
-			{0.1875, -0.5, 0.125, 0.25, 0.25, 0.1875}, -- NodeBox41
-			{0.125, -0.5, 0.1875, 0.25, 0.25, 0.25}, -- NodeBox42
-			{-0.125, -0.5, 0.1875, 0.125, 0.125, 0.25}, -- NodeBox43
-			{-0.1875, -0.5, 0.125, -0.125, 0.125, 0.1875}, -- NodeBox44
-			{-0.25, -0.5, -0.125, -0.1875, 0.125, 0.125}, -- NodeBox45
-			{-0.1875, -0.5, -0.1875, -0.125, 0.125, -0.125}, -- NodeBox46
-			{-0.125, -0.5, -0.25, 0.125, 0.125, -0.1875}, -- NodeBox47
-			{0.125, -0.5, -0.1875, 0.1875, 0.125, -0.125}, -- NodeBox48
-			{0.1875, -0.5, -0.125, 0.25, 0.125, 0.125}, -- NodeBox49
-			{0.125, -0.5, 0.125, 0.1875, 0.125, 0.1875}, -- NodeBox50
-			{-0.125, -0.5, 0.125, 0.125, 0, 0.1875}, -- NodeBox51
-			{-0.125, -0.5, 0.0625, -0.0625, 0, 0.125}, -- NodeBox52
-			{-0.1875, -0.5, -0.125, -0.125, 0, 0.125}, -- NodeBox53
-			{-0.125, -0.5, -0.125, -0.0625, 0, -0.0625}, -- NodeBox54
-			{-0.125, -0.5, -0.1875, 0.125, 0, -0.125}, -- NodeBox55
-			{0.0625, -0.5, -0.125, 0.125, 0, -0.0625}, -- NodeBox56
-			{0.125, -0.5, -0.125, 0.1875, 0, 0.125}, -- NodeBox57
-			{0.0625, -0.5, 0.0625, 0.125, 0, 0.125}, -- NodeBox58
-			{-0.0625, -0.5, 0.0625, 0.0625, -0.125, 0.125}, -- NodeBox59
-			{-0.125, -0.5, -0.0625, -0.0625, -0.125, 0.0625}, -- NodeBox60
-			{-0.0625, -0.5, -0.125, 0.0625, -0.125, -0.0625}, -- NodeBox61
-			{0.0625, -0.5, -0.0625, 0.125, -0.125, 0.0625}, -- NodeBox62
-			{-0.0625, -0.5, -0.0625, 0.0625, -0.25, 0.0625}, -- NodeBox63
-		}
-	}
-
-
-local vortex_node_box =  {
-		type = "fixed",
-		fixed = {
-			{0.4375, -0.5, -0.125, 0.5, 0.5, 0.125}, -- NodeBox1
-			{0.375, -0.5, 0.125, 0.4375, 0.5, 0.25}, -- NodeBox2
-			{0.3125, -0.5, 0.25, 0.375, 0.5, 0.3125}, -- NodeBox3
-			{0.25, -0.5, 0.25, 0.3125, 0.5, 0.375}, -- NodeBox4
-			{0.125, -0.5, 0.375, 0.25, 0.5, 0.4375}, -- NodeBox5
-			{-0.125, -0.5, 0.4375, 0.125, 0.5, 0.5}, -- NodeBox6
-			{-0.25, -0.5, 0.375, -0.125, 0.5, 0.4375}, -- NodeBox7
-			{-0.3125, -0.5, 0.25, -0.25, 0.5, 0.375}, -- NodeBox8
-			{-0.375, -0.5, 0.25, -0.3125, 0.5, 0.3125}, -- NodeBox9
-			{-0.4375, -0.5, 0.125, -0.375, 0.5, 0.25}, -- NodeBox10
-			{-0.5, -0.5, -0.125, -0.4375, 0.5, 0.125}, -- NodeBox11
-			{-0.125, -0.5, -0.5, 0.125, 0.5, -0.4375}, -- NodeBox12
-			{-0.25, -0.5, -0.4375, -0.125, 0.5, -0.375}, -- NodeBox13
-			{-0.4375, -0.5, -0.25, -0.375, 0.5, -0.125}, -- NodeBox14
-			{-0.375, -0.5, -0.3125, -0.25, 0.5, -0.25}, -- NodeBox15
-			{-0.3125, -0.5, -0.375, -0.25, 0.5, -0.3125}, -- NodeBox18
-			{0.125, -0.5, -0.4375, 0.25, 0.5, -0.375}, -- NodeBox19
-			{0.375, -0.5, -0.25, 0.4375, 0.5, -0.125}, -- NodeBox20
-			{0.25, -0.5, -0.375, 0.375, 0.5, -0.3125}, -- NodeBox21
-			{0.3125, -0.5, -0.3125, 0.375, 0.5, -0.25}, -- NodeBox22
-		}
-	}
-
 local sand_portal_params=  {
  fuel_stack = "default:sand 1",
  --fuel_surrounding = "default:sand",
@@ -120,7 +22,8 @@ element_portals:register_private_portal_node("sand_portals:sand_portal_active", 
 	tiles = {{name="sand_portal_anim.png", animation={type="vertical_frames", aspect_w=16, aspect_h=16, length=1.0}}, "default_sand.png^default_glass.png", "default_sand.png^default_glass.png", "default_sand.png^default_glass.png","default_sand.png^default_glass.png", "default_sand.png^default_glass.png"},
 	is_ground_content = true,
 	drawtype = "nodebox",
-	node_box = node_box,
+	node_box = element_portals.node_box.box_with_carved_cone,
+	selection_box = element_portals.node_box.normal_box,
 	paramtype="light",
 	groups = {cracky=3}
 }, sand_portal_params)
@@ -131,16 +34,13 @@ element_portals:register_private_portal_node("sand_portals:sand_portal", {
 
 	is_ground_content = true,
 	drawtype = "nodebox",
-	node_box = node_box,
+	node_box = element_portals.node_box.box_with_carved_cone,
+	selection_box = element_portals.node_box.normal_box,
 	paramtype="light",
 	groups = {cracky=3}
 }, sand_portal_params)
 
 element_portals:register_portal_abm(sand_portal_params)
-
-local teleport_to = function(selected_portal_name, player, meta)
-	element_portals:teleport_to(selected_portal_name, player, false, meta)
-end
 
 local player_in_radius = function (pos, player_name) 
 	local all_objects = minetest.get_objects_inside_radius(pos, element_portals.AUTO_TELEPORT_SCAN_RADIUS or 2)
@@ -169,7 +69,8 @@ minetest.register_abm({
 			end
 			local player = player_in_radius(pos, owner)
 			if player then 
-				teleport_to(selected_portal_name, player, meta)
+				print("player in radius")
+				element_portals:teleport_to(selected_portal_name, player, false, {meta = meta, pos = pos})
 			end 
 		end
 })
@@ -185,7 +86,8 @@ element_portals:register_private_portal_node("sand_portals:desert_sand_portal", 
 	tiles = {"default_desert_sand.png^portal_glass.png",  "default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png","default_desert_sand.png^default_glass.png", "default_desert_sand.png^default_glass.png"},
 	is_ground_content = true,
 	drawtype = "nodebox",
-	node_box = node_box,
+	node_box = element_portals.node_box.box_with_carved_cone,
+	selection_box = element_portals.node_box.normal_box,
 	paramtype="light",
 	groups = {cracky=3}
 }, desert_sand_portal_params)
@@ -238,7 +140,7 @@ minetest.register_node("sand_portals:sand_portal_vortex", {
 	use_texture_alpha = true,
 	liquidtype =  "source",
 	light_source = LIGHT_MAX - 1,
-	node_box = vortex_node_box,
+	node_box = element_portals.node_box.cylinder_box_14,
 	liquid_alternative_flowing = "sand_portals:sand_portal_vortex_power_field",
 	liquid_alternative_source  = "sand_portals:sand_portal_vortex",
 	walkable = false,

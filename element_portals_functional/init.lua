@@ -12,11 +12,13 @@ http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 --]]
 
-local MOD_NAME = "element_portals_functional"
+local MOD_NAME = minetest.get_current_modname()
 
 dofile(minetest.get_modpath(MOD_NAME).."/util.lua")
 
 dofile(minetest.get_modpath(MOD_NAME).."/constants.lua")
+
+dofile(minetest.get_modpath(MOD_NAME).."/node_box_library.lua")
 
 dofile(minetest.get_modpath(MOD_NAME).."/portal_data_api.lua")
 

@@ -303,7 +303,15 @@ function element_portals:teleport_to(selected_portal_name, player, travel_free, 
 			local destination_node_data = element_portals:get_portal_node_data(k, v)
 			local valid_end_point_portal =  element_portals:is_registered_out_portal(destination_node_data.node.name)
 			if valid_end_point_portal then
-				local teleport_posible = travel_free or (departure_portal_meta and element_portals:consume_fuel(departure_portal_meta, player))
+				local teleport_posible
+				if not travel_free then
+					teleport_posible = (departure_portal_meta and element_portals:consume_fuel(departure_portal_meta, player))
+				else 
+					teleport_posible = travel_free
+				end
+				
+				
+				
 				if teleport_posible then
 					v.pos.y  = v.pos.y + 1
 					if departure_portal_node_name then
