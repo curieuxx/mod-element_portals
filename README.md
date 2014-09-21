@@ -3,11 +3,22 @@ Element Portals
 
 A [Minetest](http://minetest.net/) mod that adds teleport capabilities in the game trough the natural elements found in the world. Portals can have a custom name and you can select your destination. The mod is separated in submodules so you can chose to use a subset of these portals.
 
+Screnshots
+----------
+
+![Water portal](https://gist.github.com/curieuxx/0e51be3854dfb0be7358/raw/16f862ffeaf5e0d88efb296c1b853467035c3136/item_water_portal.png)
+![Lava portal](https://gist.github.com/curieuxx/0e51be3854dfb0be7358/raw/16f862ffeaf5e0d88efb296c1b853467035c3136/item_lava_portal.png)
+![Tree portal](https://gist.github.com/curieuxx/0e51be3854dfb0be7358/raw/16f862ffeaf5e0d88efb296c1b853467035c3136/item_tree_portal.png)
+![Tree portal root](https://gist.github.com/curieuxx/0e51be3854dfb0be7358/raw/16f862ffeaf5e0d88efb296c1b853467035c3136/item_tree_portal_root.png)
+![Sand portal](https://gist.github.com/curieuxx/0e51be3854dfb0be7358/raw/16f862ffeaf5e0d88efb296c1b853467035c3136/item_sand_portal.png)
+![Desert sand portal](https://gist.github.com/curieuxx/0e51be3854dfb0be7358/raw/16f862ffeaf5e0d88efb296c1b853467035c3136/item_desert_sand_portal.png)
+
+
 Usage / Wiki
 ------------
 
 A wiki with pictures and details is here :  [https://github.com/curieuxx/mod-element_portals/wiki](https://github.com/curieuxx/mod-element_portals/wiki)
- 
+
 Dependencies
 ------------
 Just mods found in defaults:
