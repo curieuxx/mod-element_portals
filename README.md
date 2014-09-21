@@ -35,7 +35,7 @@ Just mods found in defaults:
 
 Install
 -------
-Download the latest stable pre-release [zip](https://github.com/curieuxx/mod-element_portals/archive/Sanpshot_1.0.0-beta-2014-09-09.zip) / [tarball](https://github.com/curieuxx/mod-element_portals/archive/Sanpshot_1.0.0-beta-2014-09-09.tar.gz) or the master (unstable but with new features) [zip](https://github.com/curieuxx/mod-element_portals/archive/master.zip) and unpack into your mintest `mods` as described here: [Installing Mods](http://wiki.minetest.com/wiki/Installing_Mods) or here : [Installing Mods](http://dev.minetest.net/Installing_Mods). Don't forget to enable it from world configuration.
+Download the latest stable pre-release [zip](https://github.com/curieuxx/mod-element_portals/archive/Sanpshot_1.0.0-beta-2014-09-09.zip) / [tarball](https://github.com/curieuxx/mod-element_portals/archive/Sanpshot_1.0.0-beta-2014-09-09.tar.gz) or the master (unstable but with new features) [zip](https://github.com/curieuxx/mod-element_portals/archive/master.zip) /  [tarball](https://github.com/curieuxx/mod-element_portals/archive/master.tar.gz) and unpack into your mintest `mods` as described here: [Installing Mods](http://wiki.minetest.com/wiki/Installing_Mods) or here : [Installing Mods](http://dev.minetest.net/Installing_Mods). Don't forget to enable it from world configuration.
 
 
 Current portals
