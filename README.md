@@ -6,17 +6,17 @@ A [Minetest](http://minetest.net/) mod that adds teleport capabilities in the ga
 Screnshots
 ----------
 
-![Water Portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/item_water_portal.png)
+![Water Portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/water_portal.png)
 
-![Lava portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/item_lava_portal.png)
+![Lava portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/lava_portal.png)
 
-![Tree portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/item_tree_portal.png)
+![Tree portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/tree_portal.png)
 
-![Tree portal root](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/item_tree_portal_root.png)
+![Tree portal root](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/tree_portal_root.png)
 
-![Sand portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/item_sand_portal.png)
+![Sand portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/sand_portal.png)
 
-![Desert sand portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/item_desert_sand_portal.png)
+![Desert sand portal](https://gist.githubusercontent.com/curieuxx/0e51be3854dfb0be7358/raw/desert_sand_portal.png)
 
 
 Usage / Wiki
