@@ -1,4 +1,4 @@
--- Old recipe might be needed for old versions support ?
+--[[ Old recipe
 minetest.register_craft({
 	output = 'liquid_portals:water_portal',
 	recipe = {
@@ -7,6 +7,7 @@ minetest.register_craft({
 		{'default:steel_ingot', 'default:mese_crystal_fragment', 'default:steel_ingot'}
 	}
 })
+--]]
 
 -- Accept all kind of water
 minetest.register_craft({
