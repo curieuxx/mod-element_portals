@@ -400,12 +400,24 @@ minetest.register_on_placenode(function(pos, newnode, placer, oldnode, itemstack
 	end
 end)
 
+--[[ Old recipe
 minetest.register_craft({
 	output = 'tree_portals:tree_portal',
 	recipe = {
 		{'default:sapling', 'dye:green', 'default:sapling'},
 		{'default:sapling', 'default:tree', 'default:sapling'},
 		{'default:sapling', 'default:sapling', 'default:sapling'}
+	}
+})
+--]]
+
+-- New Recipe : Accept all kind of trees and saplings
+minetest.register_craft({
+	output = 'tree_portals:tree_portal',
+	recipe = {
+		{'group:sapling', 'dye:green', 'group:sapling'},
+		{'group:sapling', 'group:tree', 'group:sapling'},
+		{'group:sapling', 'group:sapling', 'group:sapling'}
 	}
 })
 
